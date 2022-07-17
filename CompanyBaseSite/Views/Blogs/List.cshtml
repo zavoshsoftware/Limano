@@ -1,0 +1,61 @@
+﻿@model ViewModels.BlogListViewModel
+@{
+	ViewBag.Title = "مقالات | عهد ایرانیان";
+	Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+	ViewBag.Canonical = "https://ahdiran.com/blog";
+}
+
+<section id="page-title">
+	<div class="container">
+		<div class="breadcrumb">
+			<ul>
+				<li><a href="/">خانه</a> </li>
+				<li class="active"><a href="#">اخبار و مقالات</a> </li>
+			</ul>
+		</div>
+		<div class="page-title">
+			<h1>اخبار و مقالات</h1>
+		</div>
+	</div>
+</section>
+
+
+<section id="page-content" class="sidebar-right">
+	<div class="container">
+		<!-- post content -->
+		<!-- Page title -->
+		<!-- end: Page title -->
+		<!-- Blog -->
+		<div id="blog" class="grid-layout post-4-columns m-b-30" data-item="post-item" data-stagger="10">
+			<!-- Post item-->
+			@foreach (var blog in Model.Blogs)
+			{
+
+				<div class="post-item border">
+					<div class="post-item-wrap">
+						<div class="post-image">
+							<a href="#">
+								<img alt="@blog.Title" src="@blog.ImageUrl">
+							</a>
+						</div>
+						<div class="post-item-description">
+							<span class="post-meta-date"><i class="fa fa-calendar-o"></i>@blog.CreationDateStr</span>
+							<span class="post-meta-comments"><a href=""><i class="fa fa-eye"></i>@blog.Visit بازدید</a></span>
+							<h2>
+								<a href="/blog/post/@blog.UrlParam">
+@blog.Title								</a>
+							</h2>
+							<p>@blog.Summery</p>
+							<a href="/blog/post/@blog.UrlParam" class="item-link">اطلاعات بیشتر <i class="icon-chevron-left"></i></a>
+						</div>
+					</div>
+				</div>
+			}
+
+		</div>
+		<!-- end: Blog -->
+		<!-- Pagination -->
+		<!-- end: Pagination -->
+	</div>
+	<!-- end: post content -->
+</section> <!-- end: Content -->
