@@ -1,1 +1,55 @@
 ﻿@model ViewModels._BaseViewModel 
+	
+<header class="site-header header-style-2-light mobile-sider-drawer-menu header-transparent">
+	<div class="sticky-header main-bar-wraper  navbar-expand-lg">
+		<div class="main-bar">
+			<div class="container">
+				<div class="logo-header">
+					<div class="logo-header-inner logo-header-one">
+						<a href="index.html">
+							<img src="/Content/FrontEnd/images/logo-dark.png" alt="" />
+						</a>
+					</div>
+				</div>
+				<!-- NAV Toggle Button -->
+
+				<button id="mobile-side-drawer" data-target=".header-nav" data-toggle="collapse" type="button" class="navbar-toggler collapsed">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar icon-bar-first"></span>
+					<span class="icon-bar icon-bar-two"></span>
+					<span class="icon-bar icon-bar-three"></span>
+				</button>
+
+
+				<div class="extra-nav header-2-nav">
+					<div class="extra-cell">
+						<a href="javascript:;" class="Call-btn site-text-primary">021-88338383</a>
+					</div>
+				</div>
+				<!-- MAIN Vav -->
+				<div class="nav-animation header-nav navbar-collapse collapse d-flex justify-content-center">
+
+					<ul class=" nav navbar-nav">
+						<li><a href="javascript:;">صفحه اصلی</a></li>
+						<li>
+							<a href="javascript:;">خدمات</a>
+							<ul class="sub-menu">
+								<li><a href="/home/service">کراتین</a></li>
+								<li><a href="/home/service">بوتاکس</a></li>
+								<li><a href="/home/service">پروتئینه</a></li>
+							</ul>
+						</li>
+						@*<li><a href="javascript:;">نمونه‌کار</a></li>*@
+						<li><a href="/home/blog">مقالات</a></li>
+					@*	<li><a href="javascript:;">آموزشگاه</a></li>*@
+						<li><a href="/home/about">درباره ما</a></li>
+						<li><a href="/home/contact">تماس با ما</a></li>
+					</ul>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</header>

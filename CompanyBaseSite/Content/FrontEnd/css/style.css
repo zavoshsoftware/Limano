@@ -7123,6 +7123,7 @@ blockquote span {
 
 .wt-post-title .post-title {
 	margin: 0;
+    height: 85px;
 }
 
 .wt-post-meta {
@@ -7175,7 +7176,7 @@ blockquote span {
 }
 
 .wt-post-readmore {
-	margin-bottom: 0px;
+	padding-bottom: 10px;
 }
 
 .wt-post-readmore a {

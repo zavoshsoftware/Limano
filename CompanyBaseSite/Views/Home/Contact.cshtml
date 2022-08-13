@@ -1,0 +1,157 @@
+﻿
+@{
+	ViewBag.Title = "Contact";
+	Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+@section head{
+	<style>
+		input[type=text], textarea {
+			text-align: right;
+			direction: rtl;
+		}
+	</style>
+}
+
+<div class="wt-bnr-inr overlay-wraper bg-center" style="background-image:url(/Content/FrontEnd/images/banner/3.jpg);">
+	<div class="overlay-main site-bg-secondry opacity-07"></div>
+	<div class="container">
+		<div class="wt-bnr-inr-entry">
+			<div class="banner-title-outer">
+				<div class="banner-title-name">
+					<h2 class="site-text-primary">تماس با ما</h2>
+				</div>
+			</div>
+			<!-- BREADCRUMB ROW -->
+
+			<div>
+				<ul class="wt-breadcrumb breadcrumb-style-2">
+					<li><a href="javascript:void(0);">خانه</a></li>
+					<li>تماس با ما</li>
+				</ul>
+			</div>
+
+			<!-- BREADCRUMB ROW END -->
+		</div>
+	</div>
+</div>
+<div class="section-full  p-t80 p-b80 bg-orange-light">
+	<div class="section-content">
+		<div class="container">
+			<div class="contact-one  ">
+				<!-- CONTACT FORM-->
+
+				<form class="cons-contact-form" method="post" action="form-handler2.php">
+					<!-- TITLE START -->
+					<div class="center wt-small-separator-outer section-head">
+						<div class="wt-small-separator">
+							<div class="sep-leaf-left"><img src="/content/frontend/images/sep-leaf-left.png" alt=""></div>
+							<div>با تکمیل فرم زیر با ما در تماس باشید</div>
+							<div class="sep-leaf-right"><img src="/content/frontend/images/sep-leaf-right.png" alt=""></div>
+						</div>
+						<h2 data-title="Form">تماس با ما</h2>
+					</div>
+
+					<!-- TITLE END -->
+
+					<div class="row">
+						<div class="col-md-6 col-sm-6">
+							<div class="form-group">
+								<input name="username" type="text" required class="form-control" placeholder="نام*">
+							</div>
+						</div>
+						 
+						<div class="col-md-6 col-sm-6">
+							<div class="form-group">
+								<input name="phone" type="text" class="form-control" required placeholder="تلفن تماس*">
+							</div>
+						</div>
+						 
+
+						<div class="col-md-12">
+							<div class="form-group">
+								<textarea name="message" class="form-control" rows="4" placeholder="پیام شما"></textarea>
+							</div>
+						</div>
+
+						<div class="col-md-12">
+							<button type="submit" class="site-button-secondry site-btn-effect">ثبت پیام</button>
+						</div>
+
+					</div>
+				</form>
+
+				<div class="contact-info m-t30">
+					<div class="contact-info-inner">
+
+						<!-- TITLE START-->
+						<div class="center wt-small-separator-outer section-head">
+							<div class="wt-small-separator">
+								<div class="sep-leaf-left"><img src="/content/frontend/images/sep-leaf-left.png" alt=""></div>
+								<div>اطلاعات تماس</div>
+								<div class="sep-leaf-right"><img src="/content/frontend/images/sep-leaf-right.png" alt=""></div>
+							</div>
+							<h2 data-title="Info">اطلاعات تماس لیمانو</h2>
+						</div>
+						<!-- TITLE END-->
+
+						<div class="contact-info-section text-black">
+
+							<div class="row">
+
+								<div class="col-lg-3 col-md-6">
+									<div class="wt-icon-box-wraper left m-b30">
+
+										<div class="icon-content">
+											<h4 class="m-t0">تلفن تماس</h4>
+											<p>021 88783838</p>
+											<p>021 88789393</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-lg-3 col-md-6">
+									<div class="wt-icon-box-wraper left m-b30">
+
+										<div class="icon-content">
+											<h4 class="m-t0">ایمیل</h4>
+											<p>mahsanobakht@gmail.com</p>
+											<p>info@mahsanobakht.com</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-lg-3 col-md-6">
+									<div class="wt-icon-box-wraper left m-b30">
+
+										<div class="icon-content">
+											<h4 class="m-t0">آدرس</h4>
+											<p>تهران، سعادت آباد، خیابان 37 ام</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-lg-3 col-md-6">
+									<div class="wt-icon-box-wraper left">
+
+										<div class="icon-content">
+											<h4 class="m-t0">ساعت کاری</h4>
+											<ul class="list-unstyled m-b0">
+												<li>تمامی روزهای هفته:</li>
+												<li>ساعت 9 الی 21</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+</div>
