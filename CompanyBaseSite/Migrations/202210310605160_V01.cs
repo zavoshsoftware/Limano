@@ -172,6 +172,66 @@
                 .Index(t => t.RoleId);
             
             CreateTable(
+                "dbo.ServiceImages",
+                c => new
+                    {
+                        Id = c.Guid(nullable: false),
+                        Order = c.Int(nullable: false),
+                        Title = c.String(),
+                        ServiceId = c.Guid(),
+                        ImageUrl = c.String(),
+                        IsActive = c.Boolean(nullable: false),
+                        CreationDate = c.DateTime(nullable: false),
+                        LastModifiedDate = c.DateTime(),
+                        IsDeleted = c.Boolean(nullable: false),
+                        DeletionDate = c.DateTime(),
+                        Description = c.String(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Services", t => t.ServiceId)
+                .Index(t => t.ServiceId);
+            
+            CreateTable(
+                "dbo.Services",
+                c => new
+                    {
+                        Id = c.Guid(nullable: false),
+                        Title = c.String(),
+                        UrlParam = c.String(),
+                        ImageUrl = c.String(),
+                        Summery = c.String(),
+                        Body = c.String(storeType: "ntext"),
+                        Order = c.Int(),
+                        IsActive = c.Boolean(nullable: false),
+                        CreationDate = c.DateTime(nullable: false),
+                        LastModifiedDate = c.DateTime(),
+                        IsDeleted = c.Boolean(nullable: false),
+                        DeletionDate = c.DateTime(),
+                        Description = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.ServiceRequests",
+                c => new
+                    {
+                        Id = c.Guid(nullable: false),
+                        FullName = c.String(),
+                        CellNumber = c.String(),
+                        ServiceId = c.Guid(),
+                        Body = c.String(),
+                        IsActive = c.Boolean(nullable: false),
+                        CreationDate = c.DateTime(nullable: false),
+                        LastModifiedDate = c.DateTime(),
+                        IsDeleted = c.Boolean(nullable: false),
+                        DeletionDate = c.DateTime(),
+                        Description = c.String(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Services", t => t.ServiceId)
+                .Index(t => t.ServiceId);
+            
+            CreateTable(
                 "dbo.Sliders",
                 c => new
                     {
@@ -236,11 +296,15 @@
         public override void Down()
         {
             DropForeignKey("dbo.TextItems", "TextItemTypeId", "dbo.TextItemTypes");
+            DropForeignKey("dbo.ServiceRequests", "ServiceId", "dbo.Services");
+            DropForeignKey("dbo.ServiceImages", "ServiceId", "dbo.Services");
             DropForeignKey("dbo.Users", "RoleId", "dbo.Roles");
             DropForeignKey("dbo.Products", "ProductGroupId", "dbo.ProductGroups");
             DropForeignKey("dbo.Blogs", "BlogGroupId", "dbo.BlogGroups");
             DropForeignKey("dbo.BlogComments", "BlogId", "dbo.Blogs");
             DropIndex("dbo.TextItems", new[] { "TextItemTypeId" });
+            DropIndex("dbo.ServiceRequests", new[] { "ServiceId" });
+            DropIndex("dbo.ServiceImages", new[] { "ServiceId" });
             DropIndex("dbo.Users", new[] { "RoleId" });
             DropIndex("dbo.Products", new[] { "ProductGroupId" });
             DropIndex("dbo.Blogs", new[] { "BlogGroupId" });
@@ -248,6 +312,9 @@
             DropTable("dbo.TextItemTypes");
             DropTable("dbo.TextItems");
             DropTable("dbo.Sliders");
+            DropTable("dbo.ServiceRequests");
+            DropTable("dbo.Services");
+            DropTable("dbo.ServiceImages");
             DropTable("dbo.Users");
             DropTable("dbo.Roles");
             DropTable("dbo.Products");

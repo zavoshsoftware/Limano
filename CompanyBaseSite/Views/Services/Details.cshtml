@@ -1,0 +1,179 @@
+﻿@model CompanyBaseSite.ViewModels.ServiceDetailViewModel
+
+@{
+	ViewBag.Title = "Service";
+	Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+@section head{
+	<style>
+		input[type=text], textarea {
+			text-align: right;
+			direction: rtl;
+		}
+		.service-content {
+			text-align: justify;
+			direction: rtl;
+		}
+		.service-content img{
+			max-width: 100%;
+		}
+		.service-pics img {
+			max-width: 100%;
+		}
+		#errorDiv, #SuccessDiv {
+			display: none;
+		}
+	</style>
+}
+<div class="page-content">
+
+	<div class="wt-bnr-inr overlay-wraper bg-center" style="background-image:url(/content/frontend/images/banner/2.jpg);">
+		<div class="overlay-main site-bg-secondry opacity-07"></div>
+		<div class="container">
+			<div class="wt-bnr-inr-entry">
+				<div class="banner-title-outer">
+					<div class="banner-title-name">
+						<h2 class="site-text-primary">@Model.Service.Title</h2>
+					</div>
+				</div>
+				<div>
+					<ul class="wt-breadcrumb breadcrumb-style-2">
+						<li><a href="/">خانه</a></li>
+						<li>@Model.Service.Title</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="section-full p-t80 p-b50">
+		<div class="container">
+			<div class="section-content">
+				<div class="row d-flex justify-content-center">
+					<div class="col-lg-9 col-md-12 col-sm-12">
+						<div class="service-detail-outer">
+							<h2 class="m-t0">@Model.Service.Title</h2>
+							<div class="service-content">
+								@Html.Raw(Model.Service.Body)
+							</div>
+							<div class="service-pics">
+								<div class="row justify-content-center">
+									
+									@foreach (var image in Model.Service.ServiceImages)
+									{
+										<div class="col-md-6 m-b30">
+											<div class="wt-media">
+												<img src="@image.ImageUrl" alt="@image.Title">
+											</div>
+										</div>
+									}
+							 
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="section-full p-t80 p-b50 bg-orange-light">
+		<div class="container">
+			<div class="section-content">
+
+
+				<div class="section-content">
+					<div class="row">
+						<div class="col-lg-6 col-md-12 col-sm-12">
+							<div class="home-contact-section m-b30">
+								<div class="cons-contact-form" >
+
+							 
+									<h2>برای دریافت نوبت فرم زیر را تکمیل کنید</h2>
+
+									<div class="row m-b30">
+										<div class="col-md-6 col-sm-6">
+											<div class="form-group">
+												<input id="username" type="text" required class="form-control" placeholder="نام">
+											</div>
+										</div>
+
+										<div class="col-md-6 col-sm-6">
+											<div class="form-group">
+												<input id="phone" type="text" class="form-control" required placeholder="تلفن تماس">
+											</div>
+										</div>
+
+										<div class="col-md-12">
+											<div class="form-group">
+												<textarea id="message" class="form-control" rows="4" placeholder="خدمات مورد نیاز"></textarea>
+											</div>
+										</div>
+										
+										<div class="col-md-12">
+											<div id="errorDiv" class="alert alert-danger"></div>
+											<div id="SuccessDiv" class="alert alert-success">اطلاعات شما با موقیت ثبت گردید</div>
+										</div>
+										<div class="col-md-12">
+											<button type="button" onclick="submitServiceForm('@Model.Service.Id');" class="site-button site-btn-effect">ثبت</button>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-6 col-md-12 col-sm-12">
+							<div class="contact-right-section">
+								<div class="wt-media">
+									<img src="/content/frontend/images/contact-img.jpg" alt="">
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+@section scripts
+{
+	<script>
+		function submitServiceForm(id) {
+		 
+			var nameVal = $("#username").val();
+			var phoneVal = $("#phone").val();
+			var bodyVal = $("#message").val();
+			if (nameVal !== "" && phoneVal !== "" && bodyVal !== "") {
+				$.ajax(
+					{
+						url: "/ServiceRequests/SubmitRequest",
+						data: { name: nameVal, phone: phoneVal, body: bodyVal, id: id },
+						type: "POST"
+					}).done(function (result) {
+					if (result === "true") {
+						$("#errorDiv").css('display', 'none');
+						$("#SuccessDiv").css('display', 'block');
+					}
+					else   {
+						$("#errorDiv").html('خطایی رخ داده است. لطفا مجددا تلاش کنید.');
+						$("#errorDiv").css('display', 'block');
+						$("#SuccessDiv").css('display', 'none');
+
+					}
+				});
+			}
+			else {
+				$("#errorDiv").html('تمامی فیلد های زیر را تکمیل نمایید.');
+				$("#errorDiv").css('display', 'block');
+				$("#SuccessDiv").css('display', 'none');
+
+			}
+		}
+	</script>
+}

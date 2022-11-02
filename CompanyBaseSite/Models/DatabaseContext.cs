@@ -29,5 +29,11 @@ namespace Models
         public System.Data.Entity.DbSet<Models.ProductGroup> ProductGroups { get; set; }
 
         public System.Data.Entity.DbSet<Models.Product> Products { get; set; }
+        public System.Data.Entity.DbSet<Models.ServiceRequest> ServiceRequests { get; set; }
+        public System.Data.Entity.DbSet<Models.ServiceImage> ServiceImages { get; set; }
+        public System.Data.Entity.DbSet<Models.Service> Services { get; set; }
+        public System.Data.Entity.DbSet<Models.GalleryItem> GalleryItems { get; set; }
+        public System.Data.Entity.DbSet<Models.GalleryItemGroup> GalleryItemGroups { get; set; }
+        public System.Data.Entity.DbSet<Models.Team> Teams { get; set; }
     }
 }

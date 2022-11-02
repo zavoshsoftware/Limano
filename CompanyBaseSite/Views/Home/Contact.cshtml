@@ -1,4 +1,5 @@
-﻿
+﻿@using BaseSiteEshop.Helpers
+
 @{
 	ViewBag.Title = "Contact";
 	Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
@@ -103,8 +104,7 @@
 
 										<div class="icon-content">
 											<h4 class="m-t0">تلفن تماس</h4>
-											<p>021 88783838</p>
-											<p>021 88789393</p>
+											<p>@Html.SiteContentSummery("phone")</p>
 										</div>
 									</div>
 								</div>
@@ -114,8 +114,8 @@
 
 										<div class="icon-content">
 											<h4 class="m-t0">ایمیل</h4>
-											<p>mahsanobakht@gmail.com</p>
-											<p>info@mahsanobakht.com</p>
+											<p>@Html.SiteContentSummery("email")</p>
+
 										</div>
 									</div>
 								</div>
@@ -125,7 +125,8 @@
 
 										<div class="icon-content">
 											<h4 class="m-t0">آدرس</h4>
-											<p>تهران، سعادت آباد، خیابان 37 ام</p>
+											<p>@Html.SiteContentSummery("address")</p>
+
 										</div>
 									</div>
 								</div>
@@ -136,8 +137,9 @@
 										<div class="icon-content">
 											<h4 class="m-t0">ساعت کاری</h4>
 											<ul class="list-unstyled m-b0">
-												<li>تمامی روزهای هفته:</li>
-												<li>ساعت 9 الی 21</li>
+												<li>										 @Html.SiteContentSummery("hour") 
+													 </li>
+											 
 											</ul>
 										</div>
 									</div>

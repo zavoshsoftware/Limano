@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using Models;
 
-namespace ViewModels
+namespace CompanyBaseSite.ViewModels
 {
     public class BlogListViewModel : _BaseViewModel
     {

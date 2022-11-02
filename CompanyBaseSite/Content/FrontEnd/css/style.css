@@ -10193,7 +10193,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 	margin-bottom: 12px;
 	color: #000;
 	position: relative;
-	padding-left: 30px;
+	padding-right: 30px;
 	border-bottom: 1px solid #ddd;
 	padding-bottom: 10px;
 }
@@ -10205,7 +10205,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 
 .footer-light .widget_address li i {
 	position: absolute;
-	left: 0px;
+	right: 0px;
 	top: 5px;
 	font-size: 18px;
 }

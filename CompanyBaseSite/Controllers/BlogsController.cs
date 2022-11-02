@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using CompanyBaseSite.ViewModels;
 using Models;
 using ViewModels;
 

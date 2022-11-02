@@ -1,4 +1,5 @@
-﻿
+﻿@using BaseSiteEshop.Helpers
+@model CompanyBaseSite.ViewModels.AboutViewModel
 @{
 	ViewBag.Title = "About";
 	Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
@@ -41,13 +42,13 @@
 								<div class="sep-leaf-left"><img src="/Content/FrontEnd/images/sep-leaf-right.png" alt=""></div>
 							</div>
 						</div>
-						<h2>آموزش کامل، ارائه مدرک رسمی</h2>
+						<h2>@Html.SiteContentTitle("after-slider")</h2>
+						
 						<!-- TITLE END-->
-						<p>مدرس ارشد بین المللی سطح A، ما با ارائه خدمات کراتینه، بوتاکس، پروتئینه در مرکز کراتین تخصصی مهسا نوبخت در خدمت شما عزیزان هستیم. </p>
-
+						@Html.Raw(Html.SiteContentBody("after-slider"))
 						<div class="welcom-to-section-bottom d-flex justify-content-between">
-							<div class="welcom-btn-position m-t20"><a href="javascript:;" class="site-button site-btn-effect">بیشتر بدانید</a></div>
-		
+							<div class="welcom-btn-position m-t20"><a href="@Html.SiteContentUrlLink("after-slider")" class="site-button site-btn-effect">@Html.SiteContentUrlLinkTitle("after-slider")</a></div>
+							@*<img src="/Content/FrontEnd/images/sign.png" alt="">*@
 						</div>
 						<div class="hilite-large-title">
 							<span>خوش آمدید</span>
@@ -56,9 +57,9 @@
 				</div>
 				<div class="col-lg-5 col-md-12">
 					<div class="img-colarge">
-						<div class="colarge-1"><img src="/Content/FrontEnd/images/colarge/s1.jpg" alt=""></div>
-						<div class="colarge-2"><img src="/Content/FrontEnd/images/colarge/s2.jpg" alt=""></div>
-						<div class="colarge-3 slide-right"><img src="/Content/FrontEnd/images/colarge/s3.jpg" alt=""></div>
+						<div class="colarge-1"><img src="@Html.SiteContentImage("after-slider-img1")" alt=""></div>
+						<div class="colarge-2"><img src="@Html.SiteContentImage("after-slider-img2")" alt=""></div>
+						<div class="colarge-3 slide-right"><img src="@Html.SiteContentImage("after-slider-img3")" alt=""></div>
 					</div>
 				</div>
 			</div>
@@ -84,59 +85,30 @@
 
 			<div class="row d-flex justify-content-center">
 
-			 
-				<div class="col-lg-4 col-md-6 col-sm-12">
-					<div class="icon-circle-box	 v-icon-effect bg-orange-light">
-						<div class="wt-icon-box-wraper center p-b50 m-b30 corner-radius">
-							<div class="icon-lg  m-b20  icon-circle">
-								<span class="icon-cell">
-									<i class="flaticon-steamer v-icon "></i>
-								</span>
-							</div>
-							<div class="icon-content relative">
-								<h3 class="wt-tilte">کراتینه مو</h3>
-								<p>توضیحات کوتاهی در این قسمت قرار می گیرد. توضیحات کوتاهی در این قسمت قرار می گیرد. توضیحات کوتاهی در این قسمت قرار می گیرد.</p>
-								<a href="javascript:;" class="site-button-link black">اطلاعات بیشتر</a>
-							</div>
-						</div>
-					</div>
-				</div>
+				@foreach (var service in Model.Services)
+				{
 
-				 
-				<div class="col-lg-4 col-md-6 col-sm-12">
-					<div class="icon-circle-box v-icon-effect bg-orange-light">
-						<div class="wt-icon-box-wraper center p-b50  m-b30 corner-radius">
-							<div class="icon-lg  m-b20 icon-circle">
-								<span class="icon-cell">
-									<i class="flaticon-hair-dye v-icon "></i>
-								</span>
-							</div>
-							<div class="icon-content relative">
-								<h3 class="wt-tilte">پروتینه مو</h3>
-								<p>توضیحات کوتاهی در این قسمت قرار می گیرد. توضیحات کوتاهی در این قسمت قرار می گیرد. توضیحات کوتاهی در این قسمت قرار می گیرد.</p>
-								<a href="javascript:;" class="site-button-link black">اطلاعات بیشتر</a>
+					<div class="col-lg-4 col-md-6 col-sm-12">
+						<div class="icon-circle-box	 v-icon-effect bg-orange-light">
+							<div class="wt-icon-box-wraper center p-b50 m-b30 corner-radius">
+								<div class="icon-lg  m-b20  icon-circle">
+									<span class="icon-cell">
+										<i class="flaticon-hair-cut v-icon "></i>
+									</span>
+								</div>
+								<div class="icon-content relative">
+									<h3 class="wt-tilte">@service.Title</h3>
+									<p>@service.Summery</p>
+									<a href="/srvice/@service.UrlParam" class="site-button-link black">اطلاعات بیشتر</a>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
+				}
 
-				<div class="col-lg-4 col-md-6 col-sm-12">
-					<div class="icon-circle-box	 v-icon-effect bg-orange-light">
-						<div class="wt-icon-box-wraper center p-b50 m-b30 corner-radius">
-							<div class="icon-lg   m-b20  icon-circle">
-								<span class="icon-cell">
-									<i class="flaticon-hair-cut v-icon "></i>
-								</span>
-							</div>
-							<div class="icon-content relative">
-								<h3 class="wt-tilte">بوتاکس مو</h3>
-								<p>توضیحات کوتاهی در این قسمت قرار می گیرد. توضیحات کوتاهی در این قسمت قرار می گیرد. توضیحات کوتاهی در این قسمت قرار می گیرد.</p>
-								<a href="javascript:;" class="site-button-link black">اطلاعات بیشتر</a>
-							</div>
-							</div>
-						</div>
-					</div>
-				</div>
+
+		 
+			</div>
 
 	 
 			</div>

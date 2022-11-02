@@ -47,8 +47,8 @@
 			<div class="main-card mb-3 card">
 				<div class="card-body">
 					<div style="text-align: center; padding-bottom: 30px">
-					<img src="~/images/logo.png" />
-					</div>				<h5 class="card-title">ورود به نرم افزار</h5>
+					<img src="/Content/FrontEnd/images/logo-dark.png" />
+					</div>				<h5 class="card-title">ورود به پنل مدیریتی سایت</h5>
 				@using (Html.BeginForm("Login", "Account", new {ReturnUrl = ViewBag.ReturnUrl}, FormMethod.Post, new {@class = "panel-body wrapper-lg", role = "form"}))
 				{
 					@Html.AntiForgeryToken()

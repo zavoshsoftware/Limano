@@ -1,4 +1,5 @@
-﻿<footer class="site-footer footer-large footer-light text-white">
+﻿@using BaseSiteEshop.Helpers
+<footer class="site-footer footer-large footer-light text-white">
 
 	<!-- FOOTER BLOCKES START -->
 	<div class="footer-top  dot2-left-top-img">
@@ -29,11 +30,10 @@
 					<div class="widget widget_services">
 						<h4 class="widget-title">لینک مفید</h4>
 						<ul>
-							<li><a href="javascript:;">درباره</a><a href="javascript:;">نمونه کار</a></li>
-							<li><a href="javascript:;">قیمت </a><a href="javascript:;">تماس با ما</a></li>
-							<li><a href="javascript:;">گالری </a><a href="javascript:;">قوانین</a></li>
-							<li><a href="javascript:;">تیم ما </a><a href="javascript:;">سوالات متداول</a></li>
-							<li><a href="javascript:;">خدمات </a><a href="javascript:;">درباره</a></li>
+							<li> <a href="/about">درباره ما</a></li>
+							<li> <a href="/contact">تماس با ما</a></li>
+							<li> <a href="/blog">مقالات</a></li>
+							<li> <a href="/">خانه</a></li>
 						</ul>
 					</div>
 
@@ -43,9 +43,9 @@
 					<div class="widget recent-posts-entry">
 						<h4 class="widget-title">تماس با ما</h4>
 						<ul class="widget_address">
-							<li><i class="fa fa-map-marker"></i>تهران، سعادت اباد</li>
-							<li><i class="fa fa-envelope"></i>contact123@gmail.com</li>
-							<li> <i class="fa fa-phone"></i>(654) 321-7654 </li>
+							<li><i class="fa fa-map-marker"></i>@Html.SiteContentSummery("address")</li>
+							<li><i class="fa fa-envelope"></i>@Html.SiteContentSummery("email")</li>
+							<li> <i class="fa fa-phone"></i>@Html.SiteContentSummery("phone") </li>
 						</ul>
 					</div>
 				</div>
@@ -58,10 +58,9 @@
 	<div class="footer-bottom">
 		<div class="container">
 			<div class="wt-footer-bot-left d-flex justify-content-between">
-				<span class="copyrights-text">تمام حقوق این سایت متعلق به لیمانو میباشد</span>
+				<span class="copyrights-text">تمام حقوق این سایت متعلق به لیمانو میباشد. طراحی سایت <a href="https://zavoshsoftware.com" target="_blank">زاوش</a></span>
 				<ul class="copyrights-nav">
-					<li><a href="javascript:void(0);">حریم خصوصی</a></li>
-					<li><a href="contact-1.html">تماس با ما</a></li>
+				 
 				</ul>
 			</div>
 		</div>

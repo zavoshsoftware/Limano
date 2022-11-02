@@ -1,18 +1,21 @@
-﻿
+﻿@using BaseSiteEshop.Helpers
+@model CompanyBaseSite.ViewModels.HomeViewModel
 @{
-		Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+	Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
 }
 
- 
-	<div class="page-content">
-		<!-- SLIDER START -->
-		<div class="slider-outer">
-			<!-- SLIDER START -->
-			<div id="welcome_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="goodnews-header" data-source="gallery" style="background:#eeeeee;padding:0px;">
-				<div id="welcome" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.3.1">
-					<ul>
 
-						<!-- SLIDE 1 -->
+<div class="page-content">
+	<!-- SLIDER START -->
+	<div class="slider-outer">
+		<!-- SLIDER START -->
+		<div id="welcome_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="goodnews-header" data-source="gallery" style="background:#eeeeee;padding:0px;">
+			<div id="welcome" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.3.1">
+				<ul>
+
+					@foreach (var slider in Model.Sliders)
+					{
+
 						<li data-index="rs-901"
 								data-transition="fade"
 								data-slotamount="default"
@@ -21,7 +24,7 @@
 								data-easein="default"
 								data-easeout="default"
 								data-masterspeed="default"
-								data-thumb="/content/frontend/images/main-slider/slider4/slide1.jpg"
+								data-thumb="@slider.ImageUrl"
 								data-rotate="0"
 								data-fstransition="fade"
 								data-fsmasterspeed="300"
@@ -40,7 +43,7 @@
 								data-param10=""
 								data-description="">
 							<!-- MAIN IMAGE -->
-							<img src="/content/frontend/images/main-slider/slider4/slide1.jpg" alt="" data-lazyload="/content/frontend/images/main-slider/slider4/slide1.jpg" data-bgposition="center center"
+							<img src="@slider.ImageUrl" alt="" data-lazyload="@slider.ImageUrl" data-bgposition="center center"
 									 data-bgfit="cover" data-bgparallax="4" class="rev-slidebg" data-no-retina>
 							<!-- LAYERS -->
 							<!-- LAYER NR. 1 [ for overlay ] -->
@@ -93,673 +96,310 @@
 									 style="z-index: 13;
                                 white-space: normal;
                                 color:#fff;
-                                border-width:0px; ">خدمات صافی مو</div>
+                                border-width:0px; ">@slider.Title</div>
 
 
 
-							<!-- LAYER NR. 8 -->
-							<div class="tp-caption WebProduct-SubTitle   tp-resizeme"
-									 id="slide-901-layer-4"
-									 data-x="['left','left','left','left']" data-hoffset="['80','80','30','30']"
-									 data-y="['middle','middle','top','top']" data-voffset="['0','0','240','240']"
-									 data-fontsize="['90','70','70','38']"
-									 data-lineheight="['90','70','70','38']"
-									 data-width="['700','700','700','300']"
-									 data-height="['none','none','none','none']"
-									 data-type="text"
-									 data-responsive_offset="on"
-									 data-frames='[{"from":"x:-50px;opacity:0;","speed":1000,"to":"o:1;","delay":1250,"ease":"Power2.easeOut"},{"delay":"wait","speed":1500,"to":"opacity:0;","ease":"Power4.easeIn"}]'
-									 data-textAlign="['left','left','left','left']"
-									 data-paddingtop="[0,0,0,0]"
-									 data-paddingright="[0,0,0,0]"
-									 data-paddingbottom="[0,0,0,0]"
-									 data-paddingleft="[0,0,0,0]"
-									 style="z-index: 12 ; color:#fff6ef; text-transform:uppercase; white-space:normal">مرکز کراتینه مو <br>مهسا نوبخت</div>
+																<!-- LAYER NR. 8 -->
+																<div class="tp-caption WebProduct-SubTitle   tp-resizeme"
+																		 id="slide-901-layer-4"
+																		 data-x="['left','left','left','left']" data-hoffset="['80','80','30','30']"
+																		 data-y="['middle','middle','top','top']" data-voffset="['0','0','240','240']"
+																		 data-fontsize="['90','70','70','38']"
+																		 data-lineheight="['90','70','70','38']"
+																		 data-width="['700','700','700','300']"
+																		 data-height="['none','none','none','none']"
+																		 data-type="text"
+																		 data-responsive_offset="on"
+																		 data-frames='[{"from":"x:-50px;opacity:0;","speed":1000,"to":"o:1;","delay":1250,"ease":"Power2.easeOut"},{"delay":"wait","speed":1500,"to":"opacity:0;","ease":"Power4.easeIn"}]'
+																		 data-textAlign="['left','left','left','left']"
+																		 data-paddingtop="[0,0,0,0]"
+																		 data-paddingright="[0,0,0,0]"
+																		 data-paddingbottom="[0,0,0,0]"
+																		 data-paddingleft="[0,0,0,0]"
+																		 style="z-index: 12 ; color:#fff6ef; text-transform:uppercase; white-space:normal">@slider.Summery</div>
 
-							<!-- LAYER NR. 10 -->
-							<div class="tp-caption"
-									 id="slide-901-layer-5"
-									 data-x="['left','left','left','left']" data-hoffset="['80','80','30','30']"
-									 data-y="['middle','middle','top','top']" data-voffset="['200','180','480','380']"
-									 data-width="none"
-									 data-height="none"
-									 data-whitespace="nowrap"
-									 data-type="button"
-									 data-responsive_offset="on"
-									 data-responsive="off"
-									 data-frames='[{"from":"x:-50px;opacity:0;","speed":1000,"to":"o:1;","delay":1750,"ease":"Power2.easeOut"},{"delay":"wait","speed":1500,"to":"opacity:0;","ease":"Power4.easeIn"}]'
-									 data-textAlign="['left','left','left','center']"
-									 data-paddingtop="[0,0,0,0]"
-									 data-paddingright="[0,0,0,0]"
-									 data-paddingbottom="[0,0,0,0]"
-									 data-paddingleft="[0,0,0,0]"
-									 style="z-index: 14;"><a href="javascript:;" class="site-button-secondry site-btn-effect">مشاهده خدمات</a></div>
-
-
-						</li>
-
-						<!-- SLIDE 2 -->
-						<li data-index="rs-902"
-								data-transition="fade"
-								data-slotamount="default"
-								data-hideafterloop="0"
-								data-hideslideonmobile="off"
-								data-easein="default"
-								data-easeout="default"
-								data-masterspeed="default"
-								data-thumb="/content/frontend/images/main-slider/slider4/slide2.jpg"
-								data-rotate="0"
-								data-fstransition="fade"
-								data-fsmasterspeed="300"
-								data-fsslotamount="7"
-								data-saveperformance="off"
-								data-title="Slide Title"
-								data-param1="Additional Text"
-								data-param2=""
-								data-param3=""
-								data-param4=""
-								data-param5=""
-								data-param6=""
-								data-param7=""
-								data-param8=""
-								data-param9=""
-								data-param10=""
-								data-description="">
-							<!-- MAIN IMAGE -->
-							<img src="/content/frontend/images/main-slider/slider4/slide2.jpg" alt="" data-lazyload="/content/frontend/images/main-slider/slider4/slide2.jpg" data-bgposition="center center"
-									 data-bgfit="cover" data-bgparallax="4" class="rev-slidebg" data-no-retina>
-							<!-- LAYERS -->
-							<!-- LAYER NR. 1 [ for overlay ] -->
-							<div class="tp-caption tp-shape tp-shapewrapper "
-									 id="slide-902-layer-0"
-									 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-									 data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
-									 data-width="full"
-									 data-height="full"
-									 data-whitespace="nowrap"
-									 data-type="shape"
-									 data-basealign="slide"
-									 data-responsive_offset="off"
-									 data-responsive="off"
-									 data-frames='[
-                                {"from":"opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},
-                                {"delay":"wait","speed":1000,"to":"opacity:0;","ease":"Power4.easeOut"}
-                                ]'
-									 data-textAlign="['left','left','left','left']"
-									 data-paddingtop="[0,0,0,0]"
-									 data-paddingright="[0,0,0,0]"
-									 data-paddingbottom="[0,0,0,0]"
-									 data-paddingleft="[0,0,0,0]"
-									 style="z-index: 1;background-color:rgba(0, 0, 0, 0);border-color:rgba(0, 0, 0, 0);border-width:0px;">
-							</div>
+																		<!-- LAYER NR. 10 -->
+																		<div class="tp-caption"
+																				 id="slide-901-layer-5"
+																				 data-x="['left','left','left','left']" data-hoffset="['80','80','30','30']"
+																				 data-y="['middle','middle','top','top']" data-voffset="['200','180','480','380']"
+																				 data-width="none"
+																				 data-height="none"
+																				 data-whitespace="nowrap"
+																				 data-type="button"
+																				 data-responsive_offset="on"
+																				 data-responsive="off"
+																				 data-frames='[{"from":"x:-50px;opacity:0;","speed":1000,"to":"o:1;","delay":1750,"ease":"Power2.easeOut"},{"delay":"wait","speed":1500,"to":"opacity:0;","ease":"Power4.easeIn"}]'
+																				 data-textAlign="['left','left','left','center']"
+																				 data-paddingtop="[0,0,0,0]"
+																				 data-paddingright="[0,0,0,0]"
+																				 data-paddingbottom="[0,0,0,0]"
+																				 data-paddingleft="[0,0,0,0]"
+																				 style="z-index: 14;"><a href="@slider.LandingPage" class="site-button-secondry site-btn-effect">@slider.LinkTitle</a></div>
 
 
+																			</li>
 
-							<!-- LAYER NR. 3 [ Black Box ] -->
-							<div class="tp-caption   tp-resizeme"
-									 id="slide-902-layer-3"
-									 data-x="['left','left','left','left']" data-hoffset="['80','80','30','30']"
-									 data-y="['top','top','top','top']" data-voffset="['200','160','160','160']"
-									 data-fontsize="['48','48','48','34']"
-									 data-lineheight="['56','56','56','50']"
-									 data-width="['700','700','96%','96%']"
-									 data-height="['none','none','none','none']"
-									 data-whitespace="['normal','normal','normal','normal']"
-									 data-type="text"
-									 data-responsive_offset="on"
-									 data-frames='[
-                                {"from":"y:100px(R);opacity:0;","speed":2000,"to":"o:1;","delay":500,"ease":"Power4.easeOut"},
-                                {"delay":"wait","speed":1000,"to":"y:-50px;opacity:0;","ease":"Power2.easeInOut"}
-                                ]'
-									 data-textAlign="['left','left','left','left']"
-									 data-paddingtop="[0,0,0,0]"
-									 data-paddingright="[0,0,0,0]"
-									 data-paddingbottom="[0,0,0,0]"
-									 data-paddingleft="[0,0,0,0]"
-									 style="z-index: 13;
-                                white-space: normal;
-                                color:#fff;
-                                border-width:0px;">سالن زیبایی لیمانو</div>
+																		}
 
 
-
-							<!-- LAYER NR. 8 -->
-							<div class="tp-caption WebProduct-SubTitle   tp-resizeme"
-									 id="slide-902-layer-4"
-									 data-x="['left','left','left','left']" data-hoffset="['80','80','30','30']"
-									 data-y="['middle','middle','top','top']" data-voffset="['0','0','240','240']"
-									 data-fontsize="['90','70','70','38']"
-									 data-lineheight="['90','70','70','38']"
-									 data-width="['700','700','700','300']"
-									 data-height="['none','none','none','none']"
-									 data-type="text"
-									 data-responsive_offset="on"
-									 data-frames='[{"from":"x:-50px;opacity:0;","speed":1000,"to":"o:1;","delay":1250,"ease":"Power2.easeOut"},{"delay":"wait","speed":1500,"to":"opacity:0;","ease":"Power4.easeIn"}]'
-									 data-textAlign="['left','left','left','left']"
-									 data-paddingtop="[0,0,0,0]"
-									 data-paddingright="[0,0,0,0]"
-									 data-paddingbottom="[0,0,0,0]"
-									 data-paddingleft="[0,0,0,0]"
-									 style="z-index: 12 ; color:#fff6ef; text-transform:uppercase; white-space:normal">مرکز کراتینه مو <br>مهسا نوبخت</div>
-
-							<!-- LAYER NR. 10 -->
-							<div class="tp-caption"
-									 id="slide-902-layer-5"
-									 data-x="['left','left','left','left']" data-hoffset="['80','80','30','30']"
-									 data-y="['middle','middle','top','top']" data-voffset="['200','180','480','380']"
-									 data-width="none"
-									 data-height="none"
-									 data-whitespace="nowrap"
-									 data-type="button"
-									 data-responsive_offset="on"
-									 data-responsive="off"
-									 data-frames='[{"from":"x:-50px;opacity:0;","speed":1000,"to":"o:1;","delay":1750,"ease":"Power2.easeOut"},{"delay":"wait","speed":1500,"to":"opacity:0;","ease":"Power4.easeIn"}]'
-									 data-textAlign="['left','left','left','center']"
-									 data-paddingtop="[0,0,0,0]"
-									 data-paddingright="[0,0,0,0]"
-									 data-paddingbottom="[0,0,0,0]"
-									 data-paddingleft="[0,0,0,0]"
-									 style="z-index: 14;"><a href="javascript:;" class="site-button-secondry site-btn-effect">تماس با ما</a></div>
-
-
-						</li>
-
-						<!-- SLIDE 3 -->
-						<li data-index="rs-903"
-								data-transition="fade"
-								data-slotamount="default"
-								data-hideafterloop="0"
-								data-hideslideonmobile="off"
-								data-easein="default"
-								data-easeout="default"
-								data-masterspeed="default"
-								data-thumb="/content/frontend/images/main-slider/slider4/slide3.jpg"
-								data-rotate="0"
-								data-fstransition="fade"
-								data-fsmasterspeed="300"
-								data-fsslotamount="7"
-								data-saveperformance="off"
-								data-title="Slide Title"
-								data-param1="Additional Text"
-								data-param2=""
-								data-param3=""
-								data-param4=""
-								data-param5=""
-								data-param6=""
-								data-param7=""
-								data-param8=""
-								data-param9=""
-								data-param10=""
-								data-description="">
-							<!-- MAIN IMAGE -->
-							<img src="/content/frontend/images/main-slider/slider4/slide3.jpg" alt="" data-lazyload="/content/frontend/images/main-slider/slider4/slide3.jpg" data-bgposition="center center"
-									 data-bgfit="cover" data-bgparallax="4" class="rev-slidebg" data-no-retina>
-							<!-- LAYERS -->
-							<!-- LAYER NR. 1 [ for overlay ] -->
-							<div class="tp-caption tp-shape tp-shapewrapper "
-									 id="slide-903-layer-0"
-									 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-									 data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
-									 data-width="full"
-									 data-height="full"
-									 data-whitespace="nowrap"
-									 data-type="shape"
-									 data-basealign="slide"
-									 data-responsive_offset="off"
-									 data-responsive="off"
-									 data-frames='[
-                                {"from":"opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},
-                                {"delay":"wait","speed":1000,"to":"opacity:0;","ease":"Power4.easeOut"}
-                                ]'
-									 data-textAlign="['left','left','left','left']"
-									 data-paddingtop="[0,0,0,0]"
-									 data-paddingright="[0,0,0,0]"
-									 data-paddingbottom="[0,0,0,0]"
-									 data-paddingleft="[0,0,0,0]"
-									 style="z-index: 1;background-color:rgba(0, 0, 0, 0);border-color:rgba(0, 0, 0, 0);border-width:0px;">
-							</div>
-
-
-
-							<!-- LAYER NR. 3 [ Black Box ] -->
-							<div class="tp-caption   tp-resizeme"
-									 id="slide-903-layer-3"
-									 data-x="['left','left','left','left']" data-hoffset="['80','80','30','30']"
-									 data-y="['top','top','top','top']" data-voffset="['200','160','160','160']"
-									 data-fontsize="['48','48','48','34']"
-									 data-lineheight="['56','56','56','50']"
-									 data-width="['700','700','96%','96%']"
-									 data-height="['none','none','none','none']"
-									 data-whitespace="['normal','normal','normal','normal']"
-									 data-type="text"
-									 data-responsive_offset="on"
-									 data-frames='[
-                                {"from":"y:100px(R);opacity:0;","speed":2000,"to":"o:1;","delay":500,"ease":"Power4.easeOut"},
-                                {"delay":"wait","speed":1000,"to":"y:-50px;opacity:0;","ease":"Power2.easeInOut"}
-                                ]'
-									 data-textAlign="['left','left','left','left']"
-									 data-paddingtop="[0,0,0,0]"
-									 data-paddingright="[0,0,0,0]"
-									 data-paddingbottom="[0,0,0,0]"
-									 data-paddingleft="[0,0,0,0]"
-									 style="z-index: 13;
-                                white-space: normal;
-                                color:#fff;
-                                border-width:0px; ">خدمات حرفه ای</div>
-
-
-
-							<!-- LAYER NR. 8 -->
-							<div class="tp-caption WebProduct-SubTitle   tp-resizeme"
-									 id="slide-903-layer-4"
-									 data-x="['left','left','left','left']" data-hoffset="['80','80','30','30']"
-									 data-y="['middle','middle','top','top']" data-voffset="['0','0','240','240']"
-									 data-fontsize="['90','70','70','38']"
-									 data-lineheight="['90','70','70','38']"
-									 data-width="['700','700','700','300']"
-									 data-height="['none','none','none','none']"
-									 data-type="text"
-									 data-responsive_offset="on"
-									 data-frames='[{"from":"x:-50px;opacity:0;","speed":1000,"to":"o:1;","delay":1250,"ease":"Power2.easeOut"},{"delay":"wait","speed":1500,"to":"opacity:0;","ease":"Power4.easeIn"}]'
-									 data-textAlign="['left','left','left','left']"
-									 data-paddingtop="[0,0,0,0]"
-									 data-paddingright="[0,0,0,0]"
-									 data-paddingbottom="[0,0,0,0]"
-									 data-paddingleft="[0,0,0,0]"
-									 style="z-index: 12 ;  color:#fff6ef; text-transform:uppercase; white-space:normal">مرکز کراتینه مو <br>مهسا نوبخت</div>
-
-							<!-- LAYER NR. 10 -->
-							<div class="tp-caption"
-									 id="slide-903-layer-5"
-									 data-x="['left','left','left','left']" data-hoffset="['80','80','30','30']"
-									 data-y="['middle','middle','top','top']" data-voffset="['200','180','480','380']"
-									 data-width="none"
-									 data-height="none"
-									 data-whitespace="nowrap"
-									 data-type="button"
-									 data-responsive_offset="on"
-									 data-responsive="off"
-									 data-frames='[{"from":"x:-50px;opacity:0;","speed":1000,"to":"o:1;","delay":1750,"ease":"Power2.easeOut"},{"delay":"wait","speed":1500,"to":"opacity:0;","ease":"Power4.easeIn"}]'
-									 data-textAlign="['left','left','left','center']"
-									 data-paddingtop="[0,0,0,0]"
-									 data-paddingright="[0,0,0,0]"
-									 data-paddingbottom="[0,0,0,0]"
-									 data-paddingleft="[0,0,0,0]"
-									 style="z-index: 14;"><a href="javascript:;" class="site-button-secondry site-btn-effect">درباره ما</a></div>
-
-
-						</li>
-
-
-					</ul>
-					<div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
-				</div>
+				</ul>
+				<div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
 			</div>
-			<!-- SLIDER END -->
 		</div>
 		<!-- SLIDER END -->
-		<!-- ABOUT SECTION START -->
-		<div class="section-full welcome-section-outer">
-			<div class="welcome-section-top shadow-lg bg-white p-tb80">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-7 col-md-12">
-							<div class="welcom-to-section">
-								<!-- TITLE START-->
-								<div class="right wt-small-separator-outer">
-									<div class="wt-small-separator">
-										<div class="sep-leaf-right"><img src="/Content/FrontEnd/images/sep-leaf-left.png" alt=""></div>
-										<div>لیمانو</div>
-										<div class="sep-leaf-left"><img src="/Content/FrontEnd/images/sep-leaf-right.png" alt=""></div>
-									</div>
+	</div>
+	<!-- SLIDER END -->
+	<!-- ABOUT SECTION START -->
+	<div class="section-full welcome-section-outer">
+		<div class="welcome-section-top shadow-lg bg-white p-tb80">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-7 col-md-12">
+						<div class="welcom-to-section">
+							<!-- TITLE START-->
+							<div class="right wt-small-separator-outer">
+								<div class="wt-small-separator">
+									<div class="sep-leaf-right"><img src="/Content/FrontEnd/images/sep-leaf-left.png" alt=""></div>
+									<div>لیمانو</div>
+									<div class="sep-leaf-left"><img src="/Content/FrontEnd/images/sep-leaf-right.png" alt=""></div>
 								</div>
-								<h2>با آموزش های ما آماده ورود به بازار کار شوید</h2>
-								<!-- TITLE END-->
-								<p>در سالن زیبایی لیمانو علاوه بر ارائه کلیه خدمات مو، آموزش های مربوط به کراتینه و صافی مو نیز ارائه خواهد شد و بعد از گذرندان این آموزش ها می توانید وارد بازار کار شوید</p>
-
-								<div class="welcom-to-section-bottom d-flex justify-content-between">
-									<div class="welcom-btn-position m-t20"><a href="/home/about" class="site-button site-btn-effect">بیشتر بدانید</a></div>
-									@*<img src="/Content/FrontEnd/images/sign.png" alt="">*@
-								</div>
-								<div class="hilite-large-title">
-									<span>خوش آمدید</span>
-								</div>
+							</div>
+							<h2>@Html.SiteContentTitle("after-slider")</h2>
+						
+							<!-- TITLE END-->
+							@Html.Raw(Html.SiteContentBody("after-slider"))
+							<div class="welcom-to-section-bottom d-flex justify-content-between">
+								<div class="welcom-btn-position m-t20"><a href="@Html.SiteContentUrlLink("after-slider")" class="site-button site-btn-effect">@Html.SiteContentUrlLinkTitle("after-slider")</a></div>
+								@*<img src="/Content/FrontEnd/images/sign.png" alt="">*@
+							</div>
+							<div class="hilite-large-title">
+								<span>خوش آمدید</span>
 							</div>
 						</div>
-						<div class="col-lg-5 col-md-12">
-							<div class="img-colarge">
-								<div class="colarge-1"><img src="/Content/FrontEnd/images/colarge/s1.jpg" alt=""></div>
-								<div class="colarge-2"><img src="/Content/FrontEnd/images/colarge/s2.jpg" alt=""></div>
-								<div class="colarge-3 slide-right"><img src="/Content/FrontEnd/images/colarge/s3.jpg" alt=""></div>
-							</div>
+					</div>
+					<div class="col-lg-5 col-md-12">
+						<div class="img-colarge">
+							<div class="colarge-1"><img src="@Html.SiteContentImage("after-slider-img1")" alt=""></div>
+							<div class="colarge-2"><img src="@Html.SiteContentImage("after-slider-img2")" alt=""></div>
+							<div class="colarge-3 slide-right"><img src="@Html.SiteContentImage("after-slider-img3")" alt=""></div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- ABOUT SECTION  SECTION END -->
-		<!-- GALLERY SECTION START -->
-		<div class="section-full p-t80 p-b50 bg-orange-light">
-			<div class="container">
+	</div>
+	<!-- ABOUT SECTION  SECTION END -->
+	<!-- GALLERY SECTION START -->
+	<div class="section-full p-t80 p-b50 bg-orange-light">
+		<div class="container">
+
+			<!-- TITLE START-->
+			<div class="center wt-small-separator-outer section-head">
+				<div class="wt-small-separator">
+					<div class="sep-leaf-left"><img src="/Content/FrontEnd/images/sep-leaf-left.png" alt=""></div>
+					<div>نمونه کار</div>
+					<div class="sep-leaf-right"><img src="/Content/FrontEnd/images/sep-leaf-right.png" alt=""></div>
+				</div>
+				<h2 data-title="Gallery">گالری ما</h2>
+			</div>
+			<!-- TITLE END-->
+			<!-- PAGINATION START -->
+			<div class="filter-wrap work-grid p-b30 text-center">
+				<ul class="masonry-filter link-style ">
+					<li class="active"><a data-filter="*" href="#">همه</a></li>
+			
+					@foreach (var itemGroup in Model.GalleryItemGroups)
+					{
+					<li><a data-filter=".@itemGroup.Id" href="#">@itemGroup.Title</a></li>
+
+					}
+				</ul>
+			</div>
+			<!-- PAGINATION END -->
+			<!-- GALLERY CONTENT START -->
+			<div class="masonry-wrap mfp-gallery  row clearfix">
+				<!-- COLUMNS 1 -->
+				@foreach (var galleryItem in Model.GalleryItems)
+				{
+					<div class="masonry-item @galleryItem.GalleryItemGroupId col-lg-4 col-md-6 col-sm-6 m-b30">
+
+						<div class="project-img-effect-1">
+							<img src="@galleryItem.ImageUrl" alt="" />
+							<div class="wt-info">
+								<h3 class="wt-tilte m-b10 m-t0">@galleryItem.Title</h3>
+							</div>
+							<i></i>
+							<a href="@galleryItem.ImageUrl" class="mfp-link"></a>
+						</div>
+
+					</div>
+				}
+		
+			</div>
+		</div>
+	</div>
+	<!-- GALLERY SECTION END -->
+	<!-- DISCOUNT SECTION START -->
+	<div class="section-full  p-tb80 bg-white discount-section-outer">
+
+		<div class="container">
+			<div class="discount-add shadow-lg">
+				<div class="row no-gutters">
+					<div class="col-xl-6 col-lg-7 col-md-12 bg-cover" style="background-image:url(/Content/FrontEnd/images/background/add-bg.png);">
+						<div class="discount-add-info">
+							<!-- TITLE START-->
+							<div class="right wt-small-separator-outer">
+								<div class="wt-small-separator">
+									<div class="sep-leaf-right"><img src="/Content/FrontEnd/images/sep-leaf-left.png" alt=""></div>
+									<div>	@Html.SiteContentTitle("after-gallery")</div>
+									<div class="sep-leaf-left"><img src="/Content/FrontEnd/images/sep-leaf-right.png" alt=""></div>
+								</div>
+							</div>
+							<h2>	@Html.SiteContentSummery("after-gallery")</h2>
+				
+							<!-- TITLE END-->
+							<a href="@Html.SiteContentUrlLink("after-gallery")" class="site-button site-btn-effect">@Html.SiteContentUrlLinkTitle("after-gallery")</a>
+						</div>
+					</div>
+
+					<div class="col-xl-6 col-lg-5 col-md-12 bg-cover discount-add-pic  bg-bottom-center" style="background-image:url(@Html.SiteContentImage("after-gallery"))">
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+	<!-- DISCOUNT WE LOVE SECTION START -->
+	<!-- OUR TEAM START -->
+	<div class="section-full p-t80 p-b50 bg-white">
+		<div class="container">
+			<div class="section-content">
 
 				<!-- TITLE START-->
 				<div class="center wt-small-separator-outer section-head">
 					<div class="wt-small-separator">
 						<div class="sep-leaf-left"><img src="/Content/FrontEnd/images/sep-leaf-left.png" alt=""></div>
-						<div>نمونه کار</div>
+						<div>حرفه‌ای ها</div>
 						<div class="sep-leaf-right"><img src="/Content/FrontEnd/images/sep-leaf-right.png" alt=""></div>
 					</div>
-					<h2 data-title="Gallery">گالری ما</h2>
+					<h2 data-title="Experts">تیم‌ما</h2>
 				</div>
+
 				<!-- TITLE END-->
-				<!-- PAGINATION START -->
-				<div class="filter-wrap work-grid p-b30 text-center">
-					<ul class="masonry-filter link-style ">
-						<li class="active"><a data-filter="*" href="#">همه</a></li>
-						<li><a data-filter=".cat-1" href="#">کراتین</a></li>
-						<li><a data-filter=".cat-2" href="#">پروتئین تراپی</a></li>
-						<li><a data-filter=".cat-3" href="#">رنگ و لایت</a></li>
-						<li><a data-filter=".cat-4" href="#">اورونوتراپی</a></li>
-						<li><a data-filter=".cat-5" href="#">بوتاکس</a></li>
-					</ul>
-				</div>
-				<!-- PAGINATION END -->
-				<!-- GALLERY CONTENT START -->
-				<div class="masonry-wrap mfp-gallery  row clearfix">
-					<!-- COLUMNS 1 -->
-					<div class="masonry-item cat-1 col-lg-4 col-md-6 col-sm-6 m-b30">
 
-						<div class="project-img-effect-1">
-							<img src="/Content/FrontEnd/images/gallery/thumb/pic1.jpg" alt="" />
-							<div class="wt-info">
-								<h3 class="wt-tilte m-b10 m-t0">کراتین</h3>
-							</div>
-							<i></i>
-							<a href="/Content/FrontEnd/images/gallery/thumb/pic1.jpg" class="mfp-link"></a>
-						</div>
-
-					</div>
-					<!-- COLUMNS 2 -->
-					<div class="masonry-item cat-2 col-lg-4 col-md-6 col-sm-6 m-b30">
-						<div class="project-img-effect-1">
-							<img src="/Content/FrontEnd/images/gallery/pic1.jpg" alt="" />
-							<div class="wt-info">
-								<h3 class="wt-tilte m-b10 m-t0">پروتئین تراپی</h3>
-							</div>
-							<i></i>
-							<a href="/Content/FrontEnd/images/gallery/pic1.jpg" class="mfp-link"></a>
-						</div>
-					</div>
-					<!-- COLUMNS 3 -->
-					<div class="masonry-item cat-3 col-lg-4 col-md-6 col-sm-6 m-b30">
-						<div class="project-img-effect-1">
-							<img src="/Content/FrontEnd/images/gallery/thumb/pic4.jpg" alt="" />
-							<div class="wt-info">
-								<h3 class="wt-tilte  m-b10 m-t0">رنگ و لایت</h3>
-								<p class="title-style-2">بالیاژ </p>
-							</div>
-							<i></i>
-							<a href="/Content/FrontEnd/images/gallery/thumb/pic4.jpg" class="mfp-link"></a>
-						</div>
-					</div>
-					<!-- COLUMNS 4 -->
-					<div class="masonry-item cat-4 col-lg-4 col-md-6 col-sm-6 m-b30">
-						<div class="project-img-effect-1">
-							<img src="/Content/FrontEnd/images/gallery/thumb/pic3.jpg" alt="" />
-							<div class="wt-info">
-								<h3 class="wt-tilte  m-b10 m-t0">اورونوتراپی</h3>
-							</div>
-							<i></i>
-							<a href="/Content/FrontEnd/images/gallery/thumb/pic3.jpg" class="mfp-link"></a>
-						</div>
-					</div>
-					<!-- COLUMNS 5 -->
-					<div class="masonry-item cat-5 col-lg-4 col-md-6 col-sm-6 m-b30">
-						<div class="project-img-effect-1">
-							<img src="/Content/FrontEnd/images/gallery/pic5.jpg" alt="" />
-							<div class="wt-info">
-								<h3 class="wt-tilte  m-b10 m-t0">بوتاکس</h3>
-							</div>
-							<i></i>
-							<a href="/Content/FrontEnd/images/gallery/pic5.jpg" class="mfp-link"></a>
-						</div>
-					</div>
-					<!-- COLUMNS 6 -->
-				</div>
-				<!-- GALLERY CONTENT END -->
-			</div>
-		</div>
-		<!-- GALLERY SECTION END -->
-		<!-- DISCOUNT SECTION START -->
-		<div class="section-full  p-tb80 bg-white discount-section-outer">
-
-			<div class="container">
-				<div class="discount-add shadow-lg">
-					<div class="row no-gutters">
-						<div class="col-xl-6 col-lg-7 col-md-12 bg-cover" style="background-image:url(/Content/FrontEnd/images/background/add-bg.png);">
-							<div class="discount-add-info">
-								<!-- TITLE START-->
-								<div class="right wt-small-separator-outer">
-									<div class="wt-small-separator">
-										<div class="sep-leaf-right"><img src="/Content/FrontEnd/images/sep-leaf-left.png" alt=""></div>
-										<div>مرکز تخصصی کراتین</div>
-										<div class="sep-leaf-left"><img src="/Content/FrontEnd/images/sep-leaf-right.png" alt=""></div>
-									</div>
-								</div>
-								<h2>جهت تعیین نوبت  با ما در تماس باشید</h2>
-								<!-- TITLE END-->
-								<a href="/home/contact" class="site-button site-btn-effect">اطلاعات بیشتر</a>
-							</div>
-						</div>
-
-						<div class="col-xl-6 col-lg-5 col-md-12 bg-cover discount-add-pic  bg-bottom-center" style="background-image:url(/Content/FrontEnd/images/add-pic.jpg)">
-
-						</div>
-
-					</div>
-
-				</div>
-			</div>
-
-		</div>
-		<!-- DISCOUNT WE LOVE SECTION START -->
-		<!-- OUR TEAM START -->
-		<div class="section-full p-t80 p-b50 bg-white">
-			<div class="container">
 				<div class="section-content">
+					<div class="row justify-content-center">
+						@foreach (var team in Model.Teams)
+						{
 
-					<!-- TITLE START-->
-					<div class="center wt-small-separator-outer section-head">
-						<div class="wt-small-separator">
-							<div class="sep-leaf-left"><img src="/Content/FrontEnd/images/sep-leaf-left.png" alt=""></div>
-							<div>حرفه‌ای ها</div>
-							<div class="sep-leaf-right"><img src="/Content/FrontEnd/images/sep-leaf-right.png" alt=""></div>
-						</div>
-						<h2 data-title="Experts">تیم‌ما</h2>
-					</div>
-
-					<!-- TITLE END-->
-
-					<div class="section-content">
-						<div class="row justify-content-center">
 							<div class="col-lg-4 col-md-6 col-sm-12 m-b30">
 								<div class="wt-team-1">
 									<div class="wt-media">
-										<img src="/Content/FrontEnd/images/team/pic1.jpg" alt="">
+										<img src="@team.ImageUrl" alt="@team.FullName">
 										<div class="team-social-center">
 											<ul class="team-social-bar">
-												<li><a href="javascript:void(0);">Facebook</a></li>
-												<li><a href="javascript:void(0);">Twitter</a></li>
-												<li><a href="javascript:void(0);">Instagram</a></li>
+										 @if (!string.IsNullOrEmpty(team.Instagram))
+										 {
+											 <li><a href="@team.Instagram" target="_blank" >Instagram</a></li>
+										 }
+										 @if (!string.IsNullOrEmpty(team.Twitter))
+										 {
+											 <li><a href="@team.Twitter" target="_blank">Twitter</a></li>
+										 }
 											</ul>
 										</div>
 									</div>
 									<div class="wt-info bg-white p-a30 shadow-lg">
 										<div class="team-detail text-center">
-											<h3 class="m-t0">مهسا نوخت</h3>
-											<span class="title-style-2 team-position">مدیریت</span>
+											<h3 class="m-t0">@team.FullName</h3>
+											<span class="title-style-2 team-position">@team.Skill</span>
 										</div>
 									</div>
 
 								</div>
 							</div>
+						}
 
-							<div class="col-lg-4 col-md-6 col-sm-12 m-b30">
-								<div class="wt-team-1">
-									<div class="wt-media">
-										<img src="/Content/FrontEnd/images/team/pic2.jpg" alt="">
-										<div class="team-social-center">
-											<ul class="team-social-bar">
-												<li><a href="javascript:void(0);">Facebook</a></li>
-												<li><a href="javascript:void(0);">Twitter</a></li>
-												<li><a href="javascript:void(0);">Instagram</a></li>
-											</ul>
-										</div>
-									</div>
-									<div class="wt-info bg-white p-a30 shadow-lg">
-										<div class="team-detail  text-center">
-											<h3 class="m-t0">مهسا نوبخت</h3>
-											<span class="title-style-2 team-position">رنگ و مش</span>
-										</div>
-									</div>
-
-								</div>
-							</div>
-
-							<div class="col-lg-4 col-md-6 col-sm-12 m-b30">
-								<div class="wt-team-1">
-
-									<div class="wt-media">
-										<img src="/Content/FrontEnd/images/team/pic3.jpg" alt="">
-										<div class="team-social-center">
-											<ul class="team-social-bar">
-												<li><a href="javascript:void(0);">Facebook</a></li>
-												<li><a href="javascript:void(0);">Twitter</a></li>
-												<li><a href="javascript:void(0);">Instagram</a></li>
-											</ul>
-										</div>
-									</div>
-									<div class="wt-info bg-white p-a30 shadow-lg">
-										<div class="team-detail  text-center">
-											<h3 class="m-t0">مهسا نوبخت</h3>
-											<span class="title-style-2 team-position">پروتئین تراپی </span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- OUR TEAM SECTION END -->
-		<!-- CALL US SECTION START -->
-		<div class="section-full p-tb80 bg-cover bg-center makeover-section-outer bg-orange-light2" data-stellar-background-ratio="0.5">
+	</div>
+	<!-- OUR TEAM SECTION END -->
+	<!-- CALL US SECTION START -->
+	<div class="section-full p-tb80 bg-cover bg-center makeover-section-outer bg-orange-light2" data-stellar-background-ratio="0.5">
 
-			<div class="container">
-				<div class="section-content">
-					<div class="makeover-section p-tb80 text-right">
-						<h1 class="m-b5 m-b0">خدمات حرفه ای صافی مو</h1>
-						<p class="m-t0 m-b5">یک راه حل بسیار کاربردی و طولانی مدت برای رفع مشکل موهای فر و وز شدن موها وجود دارد و آن هم کراتینه کردن مو است. هرچند کراتینه کردن هم یک راه حل دائمی و همیشگی نیست، اما طولانی مدت است و تا زمانی که موهای شما از ریشه رشد نکند، به همان کیفیت اولیه بر طراوت و حالت موهای شما تاثیر گذار خواهد بود. </p>
-						<a href="/home/service" class="btn-left site-button site-btn-effect">بیشتر بدانید</a>
+		<div class="container">
+			<div class="section-content">
+				<div class="makeover-section p-tb80 text-right">
+					<h1 class="m-b5 m-b0"> @Html.SiteContentSummery("before-blogs")</h1>
+					<div class="m-t0 m-b5">
+						@Html.Raw(Html.SiteContentBody("before-blogs"))
 					</div>
-				</div>
-
-			</div>
-		</div>
-
-		<!-- CONTACT US SECTION END -->
-		<!-- OUR BLOG START -->
-		<div class="section-full  p-t80 p-b40 bg-white latest-blog-1">
-			<div class="container">
-
-				<!-- TITLE START-->
-				<div class="center wt-small-separator-outer section-head">
-					<div class="wt-small-separator">
-						<div class="sep-leaf-left"><img src="/Content/FrontEnd/images/sep-leaf-left.png" alt=""></div>
-						<div>مقالات</div>
-						<div class="sep-leaf-right"><img src="/Content/FrontEnd/images/sep-leaf-right.png" alt=""></div>
-					</div>
-					<h2 data-title="Blog">اخرین مقالات</h2>
-				</div>
-				<!-- TITLE END-->
-				<!-- BLOG SECTION START -->
-				<div class="section-content">
-					<div class="row d-flex justify-content-center">
-						<div class="col-lg-4 col-md-6 col-sm-12">
-							<!--Block one-->
-							<div class="blog-post date-style-2">
-								<div class="wt-post-media wt-img-effect zoom-slow">
-									<a href="javascript:;"><img src="/Content/FrontEnd/images/blog/default/thum1.jpg" alt=""></a>
-								</div>
-								<div class="wt-post-info bg-white p-a20 p-b0 text-center">
-									<div class="wt-post-meta ">
-										<ul>
-											<li class="post-date"><span> تیر 1400</span> </li>
-										</ul>
-									</div>
-									<div class="wt-post-title ">
-										<h3 class="post-title"><a href="javascript:;" class="site-text-primary">پروتئین تراپی چیست</a></h3>
-									</div>
-									<div class="wt-post-readmore ">
-										<a href="javascript:;" class="site-button-link black">بیشتر بخوانید</a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-lg-4 col-md-6 col-sm-12">
-							<!--Block two-->
-							<div class="blog-post date-style-2">
-								<div class="wt-post-media wt-img-effect zoom-slow">
-									<a href="javascript:;"><img src="/Content/FrontEnd/images/blog/default/thum2.jpg" alt=""></a>
-								</div>
-								<div class="wt-post-info bg-white p-a20 p-b0 text-center">
-									<div class="wt-post-meta ">
-										<ul>
-											<li class="post-date"><span> تیر 1400</span> </li>
-										</ul>
-									</div>
-									<div class="wt-post-title ">
-										<h3 class="post-title"><a href="javascript:;" class="site-text-primary">موهای همیشه سالم داشته باشید</a></h3>
-									</div>
-									<div class="wt-post-readmore ">
-										<a href="javascript:;" class="site-button-link black">بیشتر بخوانید</a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-lg-4 col-md-6 col-sm-12">
-							<!--Block three-->
-							<div class="blog-post date-style-2">
-								<div class="wt-post-media wt-img-effect zoom-slow">
-									<a href="javascript:;"><img src="/Content/FrontEnd/images/blog/default/thum3.jpg" alt=""></a>
-								</div>
-								<div class="wt-post-info bg-white p-a20 p-b0 text-center">
-									<div class="wt-post-meta ">
-										<ul>
-											<li class="post-date"><span> تیر 1400</span> </li>
-										</ul>
-									</div>
-									<div class="wt-post-title ">
-										<h3 class="post-title"><a href="javascript:;" class="site-text-primary">راه های داشتن موی سالم</a></h3>
-									</div>
-									<div class="wt-post-readmore ">
-										<a href="javascript:;" class="site-button-link black">بیشتر بخوانید</a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-					</div>
+					<a href="@Html.SiteContentUrlLink("before-blogs")" class="btn-left site-button site-btn-effect">@Html.SiteContentUrlLinkTitle("before-blogs")</a>
 				</div>
 			</div>
 
 		</div>
-		<!-- OUR BLOG END -->
+	</div>
 
+	<!-- CONTACT US SECTION END -->
+	<!-- OUR BLOG START -->
+	<div class="section-full  p-t80 p-b40 bg-white latest-blog-1">
+		<div class="container">
+
+			<!-- TITLE START-->
+			<div class="center wt-small-separator-outer section-head">
+				<div class="wt-small-separator">
+					<div class="sep-leaf-left"><img src="/Content/FrontEnd/images/sep-leaf-left.png" alt=""></div>
+					<div>مقالات</div>
+					<div class="sep-leaf-right"><img src="/Content/FrontEnd/images/sep-leaf-right.png" alt=""></div>
+				</div>
+				<h2 data-title="Blog">اخرین مقالات</h2>
+			</div>
+			<!-- TITLE END-->
+			<!-- BLOG SECTION START -->
+			<div class="section-content">
+				<div class="row d-flex justify-content-center">
+					 @foreach (var blog in Model.HomeBlogs)
+					 {
+						 
+
+					<div class="col-lg-4 col-md-6 col-sm-12">
+						<!--Block two-->
+						<div class="blog-post date-style-2">
+							<div class="wt-post-media wt-img-effect zoom-slow">
+								<a href="/blog/post/@blog.UrlParam"><img src="@blog.ImageUrl" alt="@blog.Title"></a>
+							</div>
+							<div class="wt-post-info bg-white p-a20 p-b0 text-center">
+								<div class="wt-post-meta ">
+									<ul>
+										<li class="post-date"><span> @blog.CustomeCreationDate</span> </li>
+									</ul>
+								</div>
+								<div class="wt-post-title ">
+									<h3 class="post-title"><a href="/blog/post/@blog.UrlParam" class="site-text-primary">@blog.Title</a></h3>
+								</div>
+								<div class="wt-post-readmore ">
+									<a href="/blog/post/@blog.UrlParam" class="site-button-link black">بیشتر بخوانید</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					 }
+
+				</div>
+			</div>
+		</div>
 
 	</div>
-	 
-		 
+	<!-- OUR BLOG END -->
+
+
+</div>
+

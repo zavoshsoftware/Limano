@@ -2710,11 +2710,17 @@
     <Compile Include="Controllers\BlogGroupsController.cs" />
     <Compile Include="Controllers\BlogsController.cs" />
     <Compile Include="Controllers\ContactUsFormsController.cs" />
+    <Compile Include="Controllers\GalleryItemGroupsController.cs" />
+    <Compile Include="Controllers\GalleryItemsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageBrowserController.cs" />
     <Compile Include="Controllers\ProductGroupsController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ServiceImagesController.cs" />
+    <Compile Include="Controllers\ServiceRequestsController.cs" />
+    <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\SlidersController.cs" />
+    <Compile Include="Controllers\TeamsController.cs" />
     <Compile Include="Controllers\TextItemsController.cs" />
     <Compile Include="Controllers\TextItemTypesController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
@@ -2723,31 +2729,50 @@
     </Compile>
     <Compile Include="Helpers\BaseViewModelHelper.cs" />
     <Compile Include="Helpers\CodeGenerator.cs" />
+    <Compile Include="Helpers\PageContentHelper.cs" />
     <Compile Include="Helpers\PersianCulture.cs" />
-    <Compile Include="Migrations\202111011543568_V01.cs" />
-    <Compile Include="Migrations\202111011543568_V01.designer.cs">
-      <DependentUpon>202111011543568_V01.cs</DependentUpon>
+    <Compile Include="Helpers\UrlParamGenerator.cs" />
+    <Compile Include="Migrations\202210310605160_V01.cs" />
+    <Compile Include="Migrations\202210310605160_V01.designer.cs">
+      <DependentUpon>202210310605160_V01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211011540174_V02.cs" />
+    <Compile Include="Migrations\202211011540174_V02.designer.cs">
+      <DependentUpon>202211011540174_V02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202211011633127_V03.cs" />
+    <Compile Include="Migrations\202211011633127_V03.designer.cs">
+      <DependentUpon>202211011633127_V03.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DatabaseContext.cs" />
     <Compile Include="Models\DatabaseContextInitializer.cs" />
     <Compile Include="Models\DatabaseContextInitializerBeforeTheFirstRelease.cs" />
     <Compile Include="Models\Entities\BaseEntity.cs" />
+    <Compile Include="Models\Entities\Team.cs" />
     <Compile Include="Models\Entities\Blog.cs" />
     <Compile Include="Models\Entities\BlogComment.cs" />
+    <Compile Include="Models\Entities\GalleryItem.cs" />
+    <Compile Include="Models\Entities\GalleryItemGroup.cs" />
     <Compile Include="Models\Entities\BlogGroup.cs" />
     <Compile Include="Models\Entities\ContactUsForm.cs" />
     <Compile Include="Models\Entities\Product.cs" />
     <Compile Include="Models\Entities\ProductGroup.cs" />
     <Compile Include="Models\Entities\Role.cs" />
+    <Compile Include="Models\Entities\Service.cs" />
+    <Compile Include="Models\Entities\ServiceImage.cs" />
     <Compile Include="Models\Entities\Slider.cs" />
     <Compile Include="Models\Entities\TextItem.cs" />
     <Compile Include="Models\Entities\TextItemType.cs" />
     <Compile Include="Models\Entities\User.cs" />
+    <Compile Include="Models\Entities\ServiceRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\BlogDetailViewModel.cs" />
     <Compile Include="ViewModels\BlogListViewModel.cs" />
+    <Compile Include="ViewModels\AboutViewModel.cs" />
+    <Compile Include="ViewModels\ServiceDetailViewModel.cs" />
+    <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\_BaseViewModel.cs" />
   </ItemGroup>
@@ -3057,6 +3082,35 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Blog.cshtml" />
+    <Content Include="Views\Services\Create.cshtml" />
+    <Content Include="Views\Services\Delete.cshtml" />
+    <Content Include="Views\Services\Edit.cshtml" />
+    <Content Include="Views\Services\Index.cshtml" />
+    <Content Include="Views\ServiceImages\Create.cshtml" />
+    <Content Include="Views\ServiceImages\Delete.cshtml" />
+    <Content Include="Views\ServiceImages\Edit.cshtml" />
+    <Content Include="Views\ServiceImages\Index.cshtml" />
+    <Content Include="Views\ServiceRequests\Create.cshtml" />
+    <Content Include="Views\ServiceRequests\Delete.cshtml" />
+    <Content Include="Views\ServiceRequests\Details.cshtml" />
+    <Content Include="Views\ServiceRequests\Edit.cshtml" />
+    <Content Include="Views\ServiceRequests\Index.cshtml" />
+    <Content Include="Views\Services\Details.cshtml" />
+    <Content Include="Views\GalleryItemGroups\Create.cshtml" />
+    <Content Include="Views\GalleryItemGroups\Delete.cshtml" />
+    <Content Include="Views\GalleryItemGroups\Details.cshtml" />
+    <Content Include="Views\GalleryItemGroups\Edit.cshtml" />
+    <Content Include="Views\GalleryItemGroups\Index.cshtml" />
+    <Content Include="Views\GalleryItems\Create.cshtml" />
+    <Content Include="Views\GalleryItems\Delete.cshtml" />
+    <Content Include="Views\GalleryItems\Details.cshtml" />
+    <Content Include="Views\GalleryItems\Edit.cshtml" />
+    <Content Include="Views\GalleryItems\Index.cshtml" />
+    <Content Include="Views\Teams\Create.cshtml" />
+    <Content Include="Views\Teams\Delete.cshtml" />
+    <Content Include="Views\Teams\Details.cshtml" />
+    <Content Include="Views\Teams\Edit.cshtml" />
+    <Content Include="Views\Teams\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -3068,14 +3122,23 @@
     <Folder Include="App_Data\" />
     <Folder Include="Uploads\Blog\" />
     <Folder Include="Uploads\Editor\" />
+    <Folder Include="Uploads\GalleryItem\" />
     <Folder Include="Uploads\ProductGroup\" />
     <Folder Include="Uploads\Product\" />
+    <Folder Include="Uploads\service\" />
     <Folder Include="Uploads\Slider\" />
+    <Folder Include="Uploads\team\" />
     <Folder Include="Uploads\Text\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202111011543568_V01.resx">
-      <DependentUpon>202111011543568_V01.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202210310605160_V01.resx">
+      <DependentUpon>202210310605160_V01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211011540174_V02.resx">
+      <DependentUpon>202211011540174_V02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202211011633127_V03.resx">
+      <DependentUpon>202211011633127_V03.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
